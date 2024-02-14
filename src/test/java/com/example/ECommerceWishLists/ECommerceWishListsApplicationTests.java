@@ -1,10 +1,10 @@
-package com.example.ECommersWishLists;
+package com.example.ECommerceWishLists;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ECommersWishListsApplicationTests {
+class ECommerceWishListsApplicationTests {
 
 	@Test
 	void contextLoads() {
