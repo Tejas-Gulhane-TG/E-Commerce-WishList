@@ -14,5 +14,4 @@ public class ProductRequestDto {
 
     double price;
 
-
 }

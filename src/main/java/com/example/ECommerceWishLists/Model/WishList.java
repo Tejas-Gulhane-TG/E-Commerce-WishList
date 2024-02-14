@@ -12,6 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+
+//WishList Entity
 public class WishList {
 
     @Id

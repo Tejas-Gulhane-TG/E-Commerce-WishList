@@ -4,9 +4,9 @@ import com.example.ECommerceWishLists.Enum.Gender;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
 import java.util.ArrayList;
 import java.util.List;
+
 
 @Entity
 @Data
@@ -14,6 +14,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+
+//User Entity
 public class User {
 
     @Id

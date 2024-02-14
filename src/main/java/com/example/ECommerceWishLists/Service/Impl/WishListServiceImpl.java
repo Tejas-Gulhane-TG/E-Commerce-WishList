@@ -1,7 +1,6 @@
 package com.example.ECommerceWishLists.Service.Impl;
 
 
-
 import com.example.ECommerceWishLists.Dto.RequestDto.WishListRequestDto;
 import com.example.ECommerceWishLists.Model.Product;
 import com.example.ECommerceWishLists.Model.User;
@@ -16,11 +15,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
 
+//WishList Service IMPL Create_WishList, Get_WishList, Get_All_WishList, Add_Product_to_WishList, Delete_WishList Implement Api
 @Service
 public class WishListServiceImpl implements WishListService {
     @Autowired
@@ -30,6 +29,7 @@ public class WishListServiceImpl implements WishListService {
     @Autowired
     private ProductRepository productRepository;
 
+    //Create WishList Implement
     public ResponseEntity createWishList(WishListRequestDto wishListRequestDto) {
         User user = userRepository.findByMobileNo(wishListRequestDto.getUsername());
         if(user != null){
@@ -46,6 +46,8 @@ public class WishListServiceImpl implements WishListService {
     }
 
 
+
+    //Get WishList By Id Implement
     public ResponseEntity getWishListById(int wishListId, long username, String password) {
         User user = userRepository.findByMobileNo(username);
         if(user != null){
@@ -68,6 +70,7 @@ public class WishListServiceImpl implements WishListService {
     }
 
 
+    //Get All WishList of User Implement
     public ResponseEntity getAllWishListsByUserId(Long username, String password) {
         User user = userRepository.findByMobileNo(username);
         if(user != null){
@@ -85,6 +88,7 @@ public class WishListServiceImpl implements WishListService {
     }
 
 
+    //Add product to WishList Implement
     public ResponseEntity addProductToWishList(WishListRequestDto wishListRequestDto) {
         User user = userRepository.findByMobileNo(wishListRequestDto.getUsername());
         if(user != null){
@@ -109,6 +113,8 @@ public class WishListServiceImpl implements WishListService {
         return new ResponseEntity<>("UserName not found", HttpStatus.NOT_FOUND);
     }
 
+
+    //Delete WishList Implement
     @Override
     public ResponseEntity DeleteWishList(WishListRequestDto wishListRequestDto) {
         User user = userRepository.findByMobileNo(wishListRequestDto.getUsername());
@@ -128,8 +134,6 @@ public class WishListServiceImpl implements WishListService {
         }
         return new ResponseEntity<>("User Not Found", HttpStatus.NOT_FOUND);
     }
-
-
 
 }
 

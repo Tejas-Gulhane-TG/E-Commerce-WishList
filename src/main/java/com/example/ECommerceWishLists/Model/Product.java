@@ -12,6 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+
+//Product Entity
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
+//User Controller Added Some Api Add_New_User, Get_User, Delete_User
 @RestController
 @RequestMapping("/user")
 public class UserController {

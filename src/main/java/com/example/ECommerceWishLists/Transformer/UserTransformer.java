@@ -4,8 +4,8 @@ import com.example.ECommerceWishLists.Dto.RequestDto.UserRequestDTO;
 import com.example.ECommerceWishLists.Dto.ResponseDto.UserResponseDto;
 import com.example.ECommerceWishLists.Model.User;
 import com.example.ECommerceWishLists.Security.Config;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
+//User Transformer Data
 public class UserTransformer {
 
     public static User DtoToUser(UserRequestDTO userRequestDTO){

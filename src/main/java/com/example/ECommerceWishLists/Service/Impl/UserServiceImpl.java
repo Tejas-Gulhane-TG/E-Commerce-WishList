@@ -12,12 +12,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+
+//User Service IMPL Api Add_New_User, Get_User, Delete_User Implement Api.
 @Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
     UserRepository userRepository;
-    @Override
+
+    @Override  // Create New User
     public ResponseEntity AddUser(UserRequestDTO userRequestDTO) {
         User user = userRepository.findByMobileNo(userRequestDTO.getMobileNo());
         User user1 = userRepository.findByEmailId(userRequestDTO.getEmailId());
@@ -33,7 +36,8 @@ public class UserServiceImpl implements UserService {
         return new ResponseEntity<>("New User Added \n"+userResponseDto, HttpStatus.CREATED);
     }
 
-    @Override
+
+    @Override  // Get User By UserName And Password
     public ResponseEntity GetUser(UserRequestDTO userRequestDTO) {
         User user = userRepository.findByMobileNo(userRequestDTO.getUserName());
         if(user != null){
@@ -46,7 +50,8 @@ public class UserServiceImpl implements UserService {
         return new ResponseEntity<>("UserName not found", HttpStatus.NOT_FOUND);
     }
 
-    @Override
+
+    @Override //Delete User Using Username and Password
     public ResponseEntity DeleteUser(UserRequestDTO userRequestDTO) {
         User user = userRepository.findByMobileNo(userRequestDTO.getUserName());
         if(user != null){
