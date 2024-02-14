@@ -3,9 +3,9 @@ WishList Api{
         POST :- Create a new wishlist.
             localhost:8080/api/wishlists/create
             {   
-                "wishListName":"Third wishlist",
-                "username":9921288307,
-                "password":"Sameer@123"
+                "wishListName":"First wishlist",
+                "username":9552776482,
+                "password":"Tejas@123"
              }
              
         GET  :- Get all WishList of User.
@@ -30,8 +30,8 @@ WishList Api{
 	      DELETE :- Delete Wishlist 
              localhost:8080/api/wishlists/delete
             {
-    		      "username":9921288307,
-    		      "password":"Sameer@123",
+    		      "username":9552776482,
+    		      "password":"Tejas@123",
     		      "wishListId":5548076
 	          }
     }
