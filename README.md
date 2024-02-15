@@ -37,50 +37,50 @@ WishList Api{
 		}
 
 	DELETE :- Delete Wishlist 
-    		localhost:8080/api/wishlists/delete
+    	localhost:8080/api/wishlists/delete
     		{
-		"username":9552776482,
-		"password":"Tejas@123",
-		"wishListId":5548076
+			"username":9552776482,
+			"password":"Tejas@123",
+			"wishListId":5548076
 		}
 }
 
 User Api{
 
 	POST :- Add new User.
-    		localhost:8080/user/create
+    	localhost:8080/user/create
     		{
-        	"name":"Tejas",
-        	"password":"Tejas@123",
-        	"mobileNo":9552776482,
-        	"emailId":"Tejas@gmail.com",
-        	"address":"Yavatmal",
+        		"name":"Tejas",
+        		"password":"Tejas@123",
+        		"mobileNo":9552776482,
+        		"emailId":"Tejas@gmail.com",
+        		"address":"Yavatmal",
        		"age":25,
-        	"gender":"MALE"
+        		"gender":"MALE"
     		}
     
 	GET :- Get user By username and Password, Username is mobile no of user
-    		localhost:8080/user/get
+    	localhost:8080/user/get
     		{
-        	"userName":9552776482,
-        	"password":"Tejas@123"
+        		"userName":9552776482,
+        		"password":"Tejas@123"
     		}
     
 	DELETE :- Delete user by Username and password
-    		localhost:8080/user/delete
+    	localhost:8080/user/delete
     		{ 
-        	"userName":9552776482,
-        	"password":"Tejas@123"
+        		"userName":9552776482,
+        		"password":"Tejas@123"
     		}
 }
 
 Product Api{
 
 	POST :- Added a new Product
-    		localhost:8080/product/add
+    	localhost:8080/product/add
     		{
-        	"productName":"HeadPhone",
-        	"price":1999.00
+        		"productName":"HeadPhone",
+        		"price":1999.00
     		}
     
 	GET :- Get a product by product_id
