@@ -14,10 +14,10 @@ WishList Api{
 	Delete :- Delete product from wishlist
   	    	localhost:8080/api/wishlists/product/delete
 	   	{
-		"productId":15928782,
-		"wishListId":17682114,
-		"username":9552776482,
-		"password":"Tejas@123"
+			"productId":15928782,
+			"wishListId":17682114,
+			"username":9552776482,
+			"password":"Tejas@123"
   	  	}
 
 	GET  :- Get all WishList of User.
@@ -28,7 +28,7 @@ WishList Api{
         	}
     
 	POST :- Add product in the WishList
-    		localhost:8080/api/wishlists/addProduct
+    	localhost:8080/api/wishlists/addProduct
     		{   
             	"productId":15928782,
 		"wishListId":6701976,
