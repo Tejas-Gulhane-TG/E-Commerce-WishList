@@ -9,7 +9,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
-//WishList Controller Create_WishList, Get_WishList, Get_All_WishList, Add_Product_to_WishList, Delete_WishList
+//WishList Controller
+// Create_WishList,
+// Get_WishList,
+// Get_All_WishList,
+// Add_Product_to_WishList,
+// Delete product from wishlist
+// Delete_WishList
 @RestController
 @RequestMapping("/api/wishlists")
 public class WishListController {
@@ -40,6 +46,11 @@ public class WishListController {
         return new ResponseEntity<>(responseEntity, HttpStatus.OK);
     }
 
+    @DeleteMapping("/product/delete")
+    public ResponseEntity ProductDelete(@RequestBody WishListRequestDto wishListRequestDto){
+        ResponseEntity responseEntity = wishListService.ProductDelete(wishListRequestDto);
+        return new ResponseEntity<>(responseEntity, HttpStatus.ACCEPTED);
+    }
 
     @DeleteMapping("/delete")
     public ResponseEntity DeleteWishList(@RequestBody WishListRequestDto wishListRequestDto){

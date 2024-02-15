@@ -15,4 +15,5 @@ public interface WishListService {
 
     ResponseEntity DeleteWishList(WishListRequestDto wishListRequestDto);
 
+    ResponseEntity ProductDelete(WishListRequestDto wishListRequestDto);
 }

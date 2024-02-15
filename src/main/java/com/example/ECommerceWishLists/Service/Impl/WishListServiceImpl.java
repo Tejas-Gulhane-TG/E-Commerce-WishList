@@ -19,7 +19,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-//WishList Service IMPL Create_WishList, Get_WishList, Get_All_WishList, Add_Product_to_WishList, Delete_WishList Implement Api
+//WishList Service IMPL
+// Create_WishList,
+// Get_WishList,
+// Get_All_WishList,
+// Add_Product_to_WishList,
+// Delete product from wishlist
+// Delete_WishList Implement Api
 @Service
 public class WishListServiceImpl implements WishListService {
     @Autowired
@@ -107,6 +113,39 @@ public class WishListServiceImpl implements WishListService {
                     return new ResponseEntity<>(product.getProductName()+" Added to "+wishLists.getWishListName()+" wishListId :- "+wishLists.getWishListId(), HttpStatus.ACCEPTED);
                 }
                 return new ResponseEntity<>("Wishlist not Belong to this User", HttpStatus.NOT_FOUND);
+            }
+            return new ResponseEntity<>("Wrong password  ", HttpStatus.NOT_ACCEPTABLE);
+        }
+        return new ResponseEntity<>("UserName not found", HttpStatus.NOT_FOUND);
+    }
+
+
+    //Delete product from wishList Implement
+    @Override
+    public ResponseEntity ProductDelete(WishListRequestDto wishListRequestDto) {
+        User user = userRepository.findByMobileNo(wishListRequestDto.getUsername());
+        if(user != null){
+            if(Config.matches(wishListRequestDto.getPassword(), user.getPassword())){
+                WishList wishList =  wishListRepository.findByWishListId(wishListRequestDto.getWishListId());
+                if(wishList != null){
+                    List<Product> productList = wishList.getProductList();
+                    Boolean flag = false;
+                    for(int i=0; i<productList.size(); i++){
+                        Product product = productList.get(i);
+                        if(product.getProductUId() == wishListRequestDto.getProductId()){
+                            productList.remove(i);
+                            flag = true;
+                            break;
+                        }
+                    }
+                    if(flag == false){
+                        return new ResponseEntity<>("Product not found", HttpStatus.NOT_FOUND);
+                    }
+                    wishList.setProductList(productList);
+                    wishListRepository.save(wishList);
+                    return  new ResponseEntity<>("Product ID:- "+wishListRequestDto.getProductId()+" Removed From "+wishList.getWishListName(), HttpStatus.FOUND);
+                }
+                return new ResponseEntity<>("WishList not found", HttpStatus.NOT_FOUND);
             }
             return new ResponseEntity<>("Wrong password  ", HttpStatus.NOT_ACCEPTABLE);
         }
