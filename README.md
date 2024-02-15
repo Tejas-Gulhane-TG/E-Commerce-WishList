@@ -7,17 +7,27 @@ WishList Api{
                 "username":9552776482,
                 "password":"Tejas@123"
              }
-             
-        GET  :- Get all WishList of User.
+
+        GET  :- Get wishlist of user using WishList_Id, Username, Password
+            localhost:8080/api/wishlists/17054601/9552776482/Tejas@123
+
+
+     	Delete :- Delete product from wishlist
+      	    localhost:8080/api/wishlists/product/delete
+    	   {
+    		"productId":15928782,
+    		"wishListId":17682114,
+    		"username":9552776482,
+    		"password":"Tejas@123"
+	   }
+
+	GET  :- Get all WishList of User.
             localhost:8080/api/wishlists/allList
             {   
                 "username":9552776482, 
                 "password":"Tejas@123"   
             }
-
-        GET  :- Get wishlist of user using WishList_Id, Username, Password
-            localhost:8080/api/wishlists/17054601/9552776482/Tejas@123
-            
+	    
         POST :- Add product in the WishList
             localhost:8080/api/wishlists/addProduct
             {   
