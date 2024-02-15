@@ -84,8 +84,8 @@ Product Api{
     		}
     
 	GET :- Get a product by product_id
-    		localhost:8080/product/get-by-productId/659840
+    	localhost:8080/product/get-by-productId/659840
     
 	DELETE :- delete product by product_id
-    		localhost:8080/product/delete-by-id/659840
+    	localhost:8080/product/delete-by-id/659840
 }
