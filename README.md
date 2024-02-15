@@ -1,6 +1,6 @@
 WishList Api{
-
-        POST :- Create a new wishlist.
+		
+  	POST :- Create a new wishlist.
             	localhost:8080/api/wishlists/create
             	{   
                 	"wishListName":"First wishlist",
@@ -8,10 +8,10 @@ WishList Api{
                 	"password":"Tejas@123"
              	}
 
-        GET  :- Get wishlist of user using WishList_Id, Username, Password
+	GET  :- Get wishlist of user using WishList_Id, Username, Password
             	localhost:8080/api/wishlists/17054601/9552776482/Tejas@123
 
-        Delete :- Delete product from wishlist
+	Delete :- Delete product from wishlist
       	    	localhost:8080/api/wishlists/product/delete
     	   	{
     			"productId":15928782,
@@ -27,7 +27,7 @@ WishList Api{
                 	"password":"Tejas@123"   
             	}
 	    
-        POST :- Add product in the WishList
+	POST :- Add product in the WishList
         	localhost:8080/api/wishlists/addProduct
         	{   
                 	"productId":15928782,
